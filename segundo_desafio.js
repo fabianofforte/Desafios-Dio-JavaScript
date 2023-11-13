@@ -11,13 +11,18 @@ Imprima no console o valor que será gasto de combustivel para realizar esta via
 
 */
 
-const precoCombustivel = 5.45;
-const kmPorLitro = 14;
+const precoEtanol = 5.25;
+const precoGasolina = 5.55;
+const kmPorLitros = 14;
 const distanciaEmKm = 1000;
+const tipoCombustivel = 'Gasolina';
 
+const litrosConsumidos = distanciaEmKm / kmPorLitros;
 
-const litrosConsumidos = distanciaEmKm / kmPorLitro;
-
-const valorGasto = litrosConsumidos * precoCombustivel;
-
-console.log(valorGasto.toFixed(2));
+if (tipoCombustivel === 'Etanol'){
+	const valorGasto = litrosConsumidos * precoEtanol;
+	console.log(valorGasto.toFixed(2));
+} else{
+	const valorGasto = litrosConsumidos * precoGasolina;
+	console.log(valorGasto.toFixed(2));
+}
